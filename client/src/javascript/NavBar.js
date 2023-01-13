@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react'
-import account_logo from "./Assets/account_logo.png"
-import Logo from "./Assets/Logo.png"
-import "./NavBar.css"
+import account_logo from "../Assets/account_logo.png"
+import Logo from "../Assets/Logo.png"
+import "../css/NavBar.css"
 
 
 function NavBar() {

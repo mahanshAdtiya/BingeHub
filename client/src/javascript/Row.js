@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import axios from "./axios"
-import "./Row.css"
+import axios from "../important/axios"
+import { Link} from 'react-router-dom';
+import "../css/Row.css"
 
 const baseURL = "https://image.tmdb.org/t/p/original/";
 
@@ -18,7 +19,7 @@ function Row( {title,fetchUrl,isLargeRow} ) {
     fetchMovies()
   }, [fetchUrl])
 
-  // console.table(movies);
+  console.table(movies);
 
   return (
     <div className='row'>
@@ -27,9 +28,10 @@ function Row( {title,fetchUrl,isLargeRow} ) {
 
         <div className='row_posters_containers'>
         {movies.map(movie => ( 
-          <img key={movie.id} className={`row_poster_img ${isLargeRow ? "Large" : ""}`} src={`${baseURL}${isLargeRow ? movie.poster_path : movie.backdrop_path}`} alt={movie.name} />
-          // <img key={movie.id} className= "row_poster_img" src={`${baseURL}${isLargeRow ? movie.poster_path : movie.backdrop_path}`} alt={movie.name} />
-          // <img key={movie.id} className="row_poster_img" src={`${baseURL}${movie.poster_path}`} alt={movie.title}/>
+          <Link key={movie.id} to={`info-page/${movie.id}`} className='Link'>
+            <img key={movie.id} className={`row_poster_img ${isLargeRow ? "Large" : ""}`} src={`${baseURL}${isLargeRow ? movie.poster_path : movie.backdrop_path}`} alt={movie.name} />
+          </Link>
+
         ))}
 
         </div>

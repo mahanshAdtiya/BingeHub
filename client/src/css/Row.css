@@ -4,14 +4,17 @@
 }
 
 .title{
-    color: antiquewhite;
+    color: #F9A51A;
+    font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
+
 }
 
 .row_posters_containers{
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .row_posters_containers::-webkit-scrollbar{
@@ -20,7 +23,7 @@
 
 .row_poster_img{
     object-fit: contain;
-    width: 100%;
+    width: auto;
     height: 180px;
     display: block;
     transition: transform 600ms;
@@ -28,6 +31,7 @@
 }
   
 .row_poster_img:hover {
+    cursor: pointer;
     transform: scale(1.1);
 }
 
@@ -36,6 +40,7 @@
 }
 
 .row_poster_img.Large:hover{
+    cursor: pointer;
     transform: scale(1.2);
 }
 

@@ -1,15 +1,17 @@
 import {useState, useEffect}from 'react';
-import axios from "./axios"
-import requests from './request';
-import "./Banner.css"
+import axios from "../important/axios"
+import requests from '../important/request';
+import "../css/Banner.css"
 
-function Banner() {
+import { Link } from 'react-router-dom';
+
+function Banner({flag}) {
 
   const[movie,setMovie] = useState([]);
 
   useEffect(() => {
     async function fetchMovie() {
-      const request = await axios.get(requests.fetchTrending);
+      const request = await axios.get(requests.fetchTrendingMovies);
       setMovie(request.data.results && request.data.results[Math.floor(Math.random() * request.data.results.length - 1)]);
       return request;
     }
@@ -21,22 +23,22 @@ function Banner() {
     return str;
   }
 
-  console.log(movie);
   return (
     <header className='banner' 
     style={{ 
       backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
     }}>
-      {console.log(movie?.backdrop_path)}
+      {/* <SearchBar className="searchBar" placeholder="Search.."/> */}
 
       <div className='banner_content'>
 
         <h1 className='banner_title'> {movie?.title || movie?.name || movie?.original_name} </h1>
 
-        <div className='banner_button_container'>
+    
+         <div className='banner_button_container'>
 
-          <button className='banner_button'>Info </button>
-          <button className='banner_button'>No Idea</button>     
+          <button className='banner_button'><Link to={`info-page/${movie.id}`}>Info</Link></button>
+          <button className='banner_button'>Add</button>     
               
         </div>
       
