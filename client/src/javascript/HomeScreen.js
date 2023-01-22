@@ -8,11 +8,9 @@ function HomeScreen() {
             <Banner />
 
             {/* These are for testing */}
-            <Row title="Your List" fetchUrl={request.fetchTrendingMovies} isLargeRow/>
-            <Row title="Top Rated" fetchUrl={request.fetchTopRatedMovies} />
-            <Row title="Comedy Movies" fetchUrl={request.fetchComedyMovies} />
-            <Row title="Action" fetchUrl={request.fetchActionMovies} />
-            <Row title="Romance" fetchUrl={request.fetchRomanceMovies} />
+            <Row title="Your List" type={"movie"}fetchUrl={request.fetchTrendingMovies} isLargeRow/>
+            <Row title="Top Rated Movies" type={"movie"} fetchUrl={request.fetchTopRatedMovies} />
+            <Row title="Top Rates Shows" type={"tv"} fetchUrl={request.fetchTopRatedTVShows} />
           
         </div>
       );

@@ -37,7 +37,7 @@ function Banner({flag}) {
     
          <div className='banner_button_container'>
 
-          <button className='banner_button'><Link to={`info-page/${movie.id}`}>Info</Link></button>
+          <button onClick={(e) => {e.preventDefault()}} className='banner_button'><Link to={`info-page/movie/${movie.id}`}>Info</Link></button>
           <button className='banner_button'>Add</button>     
               
         </div>

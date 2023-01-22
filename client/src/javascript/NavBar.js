@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react'
-import account_logo from "../Assets/account_logo.png"
+import account_avatar from "../Assets/account_avatar.png"
 import Logo from "../Assets/Logo.png"
+import { Link} from 'react-router-dom';
 import "../css/NavBar.css"
 
 
@@ -22,9 +23,15 @@ function NavBar() {
   return (
     <div className={`NavBar ${show && "NavBar_black"}`}>
 
-    <img className='Logo' src={Logo} alt='logo' />
+      <img className='Logo' src={Logo} alt='logo' />
 
-    <img className='account_logo' src={account_logo} alt='logo' />
+      {/* <div className='NavBar_options'>
+
+        <Link  to="/Movies" className='NavBar_links'> <h3>Movies</h3> </Link>
+
+      </div> */}
+
+      <img className='account_avatar' src={account_avatar} alt='logo' />
 
     </div>
   )
